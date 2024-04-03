@@ -1,4 +1,4 @@
-package com.example.fullstacksocial.utils
+package com.example.fullstacksocial.presentation.utils
 
 sealed class Screen(val route: String) {
     object SplashScreen : Screen("splash_screen")

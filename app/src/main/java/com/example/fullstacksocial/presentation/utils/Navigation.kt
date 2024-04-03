@@ -1,9 +1,10 @@
-package com.example.fullstacksocial.utils
+package com.example.fullstacksocial.presentation.utils
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.fullstacksocial.presentation.Login.LoginScreen
 import com.example.fullstacksocial.presentation.Splash.SplashScreen
 
 @Composable
@@ -18,7 +19,7 @@ fun Navigation() {
             SplashScreen(navController = navController)
         }
         composable(Screen.LoginScreen.route) {
-
+            LoginScreen(navController = navController)
         }
 
     }
