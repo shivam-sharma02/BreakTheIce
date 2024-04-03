@@ -1,4 +1,4 @@
-package com.example.fullstacksocial.ui.theme
+package com.example.fullstacksocial.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
