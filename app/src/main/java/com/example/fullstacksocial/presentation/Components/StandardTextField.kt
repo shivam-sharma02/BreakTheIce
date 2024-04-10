@@ -27,6 +27,7 @@ fun StandarTextField(
     text : String = "",
     hint : String = "",
     isError: Boolean = false,
+    maxLength: Int = 50,
     keyboardType: KeyboardType = KeyboardType.Text,
     onValueChanged: (String) -> Unit
 ) {
@@ -41,7 +42,11 @@ fun StandarTextField(
 
     TextField(
         value = text,
-        onValueChange = onValueChanged,
+        onValueChange = {
+              if (it.length <= maxLength) {
+                  onValueChanged(it)
+              }
+        },
         placeholder = {
             Text(text = hint, style = MaterialTheme.typography.bodyLarge)
         },
