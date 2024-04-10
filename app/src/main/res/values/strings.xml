@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FullStackSocial</string>
+    <string name="password_visible_content_description">Password is Visible\n</string>
+    <string name="password_hidden_content_description">Password is hidden\n</string>
 </resources>
