@@ -10,8 +10,8 @@ import androidx.constraintlayout.widget.Placeholder
 
 @Composable
 fun StandarTextField(
-    text : String,
-    hint : String,
+    text : String = "",
+    hint : String = "",
     onValueChanged: (String) -> Unit
 ) {
     TextField(
