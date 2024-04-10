@@ -49,7 +49,7 @@ fun StandarTextField(
         keyboardOptions = KeyboardOptions(
             keyboardType = keyboardType
         ),
-        visualTransformation = if (isPasswordToggleDisplayed){
+        visualTransformation = if (isPasswordToggleDisplayed && !isPasswordVisible){
             PasswordVisualTransformation()
         }else {
             VisualTransformation.None
