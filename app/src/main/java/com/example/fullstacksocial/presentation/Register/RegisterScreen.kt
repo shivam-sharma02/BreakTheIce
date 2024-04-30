@@ -97,13 +97,13 @@ fun RegisterScreen(
             text = buildAnnotatedString {
                 append(stringResource(id = R.string.already_have_an_account))
                 append(" ")
-                val SignInText = stringResource(id = R.string.sign_in)
+                val signInText = stringResource(id = R.string.sign_in)
                 withStyle(
                     style = SpanStyle(
                         MaterialTheme.colorScheme.primary
                     )
                 ){
-                    append(SignInText)
+                    append(signInText)
                 }
             },
             style = MaterialTheme.typography.bodyMedium ,
