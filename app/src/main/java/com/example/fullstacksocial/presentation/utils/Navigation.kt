@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.fullstacksocial.presentation.Login.LoginScreen
 import com.example.fullstacksocial.presentation.Register.RegisterScreen
 import com.example.fullstacksocial.presentation.Splash.SplashScreen
+import com.example.fullstacksocial.presentation.mainfeed.MainFeedScreen
 
 @Composable
 fun Navigation() {
@@ -24,6 +25,9 @@ fun Navigation() {
         }
         composable(Screen.RegisterScreen.route) {
             RegisterScreen(navController = navController)
+        }
+        composable(Screen.MainFeedScreen.route) {
+            MainFeedScreen(navController = navController)
         }
 
     }
