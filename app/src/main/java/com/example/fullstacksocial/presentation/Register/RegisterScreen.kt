@@ -1,11 +1,11 @@
-package com.example.fullstacksocial.presentation.Login
+package com.example.fullstacksocial.presentation.Register
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -27,9 +27,9 @@ import com.example.fullstacksocial.presentation.Components.StandardTextField
 import com.example.fullstacksocial.presentation.ui.theme.SpaceMedium
 
 @Composable
-fun LoginScreen(
+fun RegisterScreen(
     navController: NavController,
-    viewModel: LoginViewModel = hiltViewModel()
+    viewModel: RegisterViewModel = hiltViewModel()
 ) {
     Box(
         modifier = Modifier
@@ -48,8 +48,17 @@ fun LoginScreen(
                 .align(Alignment.Center)
         ){
             Text(
-                text = stringResource(id = R.string.login),
+                text = stringResource(id = R.string.register),
                 style = MaterialTheme.typography.headlineLarge
+            )
+            Spacer(modifier = Modifier.height(SpaceMedium))
+            StandardTextField(
+                text = viewModel.emailText.value,
+                onValueChanged = {
+                    viewModel.setEmailText(it)
+                },
+                hint = stringResource(id = R.string.email),
+                error = viewModel.emailError.value
             )
             Spacer(modifier = Modifier.height(SpaceMedium))
             StandardTextField(
@@ -79,26 +88,30 @@ fun LoginScreen(
                 modifier = Modifier.align(Alignment.End)
                 ) {
                 Text(
-                    text = stringResource(id = R.string.login),
+                    text = stringResource(id = R.string.register),
                     color = MaterialTheme.colorScheme.onPrimary
                 )
             }
         }
         Text(
             text = buildAnnotatedString {
-                append(stringResource(id = R.string.dont_have_an_account_yet))
+                append(stringResource(id = R.string.already_have_an_account))
                 append(" ")
-                val SignUpText = stringResource(id = R.string.sign_up)
+                val SignInText = stringResource(id = R.string.sign_in)
                 withStyle(
                     style = SpanStyle(
                         MaterialTheme.colorScheme.primary
                     )
                 ){
-                    append(SignUpText)
+                    append(SignInText)
                 }
             },
             style = MaterialTheme.typography.bodyMedium ,
-            modifier = Modifier.align(Alignment.BottomCenter)
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .clickable {
+                    navController.popBackStack()
+                }
         )
     }
 }
